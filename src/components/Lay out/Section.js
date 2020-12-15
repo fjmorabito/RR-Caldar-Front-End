@@ -6,7 +6,7 @@ export default class Section extends Component {
     render() {
         return (
             <section>
-                <Container data={this.props.data} deleteBoilerType={this.props.delItem} addBoilerType={this.props.addItem} />
+                <Container data={this.props.data} deleteBoilerType={this.props.deleteBoilerType} addBoilerType={this.props.addBoilerType} />
             </section>
         );
     }

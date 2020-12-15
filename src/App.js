@@ -7,8 +7,9 @@ import Section from './components/Lay out/Section';
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = 
-      boilerTypeMock;
+    this.state = {
+      boilerTypeMock,
+    };
   }
 
   // Delete BoilerType
@@ -30,7 +31,7 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
-        <Section data={this.state.boilerTypeMock} deleteBoilerType={ this.deleteBoilerType} addBoilerType={this.addBoilerType} />
+        <Section data={this.state.boilerTypeMock} deleteBoilerType={this.deleteBoilerType} addBoilerType={this.addBoilerType} />
       </div>
     );
   }

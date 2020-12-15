@@ -29,10 +29,10 @@ export default class Form extends Component {
                     <div>
                         <div>
                             <label>Model type: </label>
-                            <select name="model" value={this.state.model} onChange={this.handleChange}></select>
+                            <input name="model" value={this.state.model} onChange={this.handleChange}></input>
                             
                             <label>Required maintainance time: </label>
-                            <select name="std_maintainance" value={this.state.std_maintainance_time} onChange={this.handleChange}></select>
+                            <input name="std_maintainance" value={this.state.std_maintainance_time} onChange={this.handleChange}></input>
 
                             <label>Observation: </label>
                             <input type="text" name="name" value={this.state.name} onChange={this.handleChange}/>
