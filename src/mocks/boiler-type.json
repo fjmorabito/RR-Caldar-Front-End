@@ -1,0 +1,18 @@
+[
+    {
+        "_id": {
+            "$oid": "5fbbb92ffc13ae4285000000"
+        },
+        "model": "S",
+        "std_maintainance_time": 7,
+        "obs": "!!!!!!!!!!"
+    },
+    {
+        "_id": {
+            "$oid": "5fbbb92ffc13ae4285000001"
+        },
+        "model": "S",
+        "std_maintainance_time": 7,
+        "obs": "!!!!!!!!!!"
+    }
+]
