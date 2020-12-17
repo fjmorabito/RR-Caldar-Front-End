@@ -13,15 +13,14 @@ export default class Table extends Component {
                         <th>Observation</th>
                         <th>
                             <div>
-                                <button onClick={this.props.displayForm}>Boton loco 2</button>
-                                <button>Boton loco</button>
+                                <button onClick={this.props.displayForm}>Create a Boiler Model</button>
                             </div>
                         </th>
                     </tr>
                 </thead>
                 <tbody>
                     {this.props.data.map((row) => (
-                        <Row key={row._id.$oid} row={row} editBoilerType={this.props.editBoilerType} deleteBoilerType={this.props.deleteBoilerType} />
+                        <Row key={row.model} row={row} deleteBoilerType={this.props.deleteBoilerType} displayEditForm={this.props.displayEditForm}/>
                     ))}
                 </tbody>
             </table>

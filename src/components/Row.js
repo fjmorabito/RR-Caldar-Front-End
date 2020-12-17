@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 export default class Row extends Component {
     render() {
-        const { _id, model , std_maintainance_time , obs} = this.props.row;
+        const { model, std_maintainance_time, obs } = this.props.row;
         return (
             <tr>
                 <td>{model}</td>
@@ -11,8 +11,8 @@ export default class Row extends Component {
                 <td>{obs}</td>
                 <td>
                     <div>
-                        <button onClick={this.props.editBoilerType}>Edit</button>
-                        <button onClick={this.props.deleteBoilerType.bind(this, _id)} >Delete</button>
+                        <button onClick={this.props.displayEditForm}>Edit</button>
+                        <button onClick={this.props.deleteBoilerType.bind(this, model)}>Delete</button>
                     </div>
                 </td>
             </tr>

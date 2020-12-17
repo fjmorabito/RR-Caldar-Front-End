@@ -5,10 +5,9 @@ export default class Form extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            id: '5',
             model: '',
             std_maintainance_time: '',
-            observation: ''
+            obs: ''
         };
     }
 
@@ -16,29 +15,30 @@ export default class Form extends Component {
         this.setState({ [target.name]: target.value });
     };
 
-    handleSubmit = (e) => {
+    handleCreateSubmit = (e) => {
         e.preventDefault()
-        this.props.newOne(this.state)
+        this.props.newBoilerType(this.state)
         this.props.hideForm()
     };
 
-    render(){
+    render() {
         return (
-            <div> 
-                <form onSubmit={this.handleSubmit}>
+            <div>
+                <form onSubmit={this.handleCreateSubmit}>
                     <div>
                         <div>
                             <label>Model type: </label>
                             <input name="model" value={this.state.model} onChange={this.handleChange}></input>
-                            
+
                             <label>Required maintainance time: </label>
-                            <input name="std_maintainance" value={this.state.std_maintainance_time} onChange={this.handleChange}></input>
+                            <input name="std_maintainance_time" type="number" value={this.state.std_maintainance_time} onChange={this.handleChange}></input>
 
                             <label>Observation: </label>
-                            <input type="text" name="name" value={this.state.name} onChange={this.handleChange}/>
+                            <input name="obs" type="text" value={this.state.obs} onChange={this.handleChange} />
                         </div>
                     </div>
                     <button type="submit">Confirm</button>
+                    <button onClick={this.props.hideForm}>Cancel</button>
                 </form>
             </div>
         );

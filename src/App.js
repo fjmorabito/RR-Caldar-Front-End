@@ -12,26 +12,38 @@ class App extends Component {
     };
   }
 
-  // Delete BoilerType
-  deleteBoilerType = (id) => {
+  // Delete Boiler Type
+  deleteBoilerType = (boilerTyp) => {
     this.setState({
       boilerTypeMock:
         [
-          ...this.state.boilerTypeMock.filter(boilerTypeMock => boilerTypeMock.id !== id)
+          ...this.state.boilerTypeMock.filter(boilerTypeMock => boilerTypeMock.model !== boilerTyp)
         ]
     });
   }
 
-  // Add boilerTypeMock
+  // Add boiler Type
   addBoilerType = (newBoilerType) => {
     this.setState({ boilerTypeMock: [...this.state.boilerTypeMock, newBoilerType] });
+  }
+
+  // Edit Boiler Type
+  editBoilerType = (boilerTypeEdited) => {
+    this.setState({
+      boilerTypeMock: [...this.state.boilerTypeMock.map(boilerT => {
+        if (boilerT.model === boilerTypeEdited.model) {
+          boilerT = boilerTypeEdited;
+        }
+        return boilerT;
+      })]
+    });
   }
 
   render() {
     return (
       <div className="App">
         <Header />
-        <Section data={this.state.boilerTypeMock} deleteBoilerType={this.deleteBoilerType} addBoilerType={this.addBoilerType} />
+        <Section data={this.state.boilerTypeMock} editBoilerType={this.editBoilerType} deleteBoilerType={this.deleteBoilerType} addBoilerType={this.addBoilerType} />
       </div>
     );
   }
