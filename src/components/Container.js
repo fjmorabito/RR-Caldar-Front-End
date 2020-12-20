@@ -35,7 +35,7 @@ export default class Container extends Component {
     }
     render() {
         return (
-            <div>
+            <div style={contain}>
                 {this.state.showForm && <Form newBoilerType={this.props.addBoilerType} hideForm={this.hideForm} /> }
                 {this.state.showEditForm && <EditForm data={this.props.data} editBoilerType={this.props.editBoilerType} hideEditForm={this.hideEditForm} displayEditForm={this.displayEditForm}/>}
                 <Table data={this.props.data} displayForm={this.displayForm} editBoilerType={this.props.editBoilerType} deleteBoilerType={this.props.deleteBoilerType} hideForm={this.hideForm} hideEditForm={this.hideEditForm} displayEditForm={this.displayEditForm} />
@@ -46,5 +46,13 @@ export default class Container extends Component {
 
 Container.propTypes = {
     deleteBoilerType: PropTypes.func.isRequired,
-    addItem: PropTypes.func.isRequired,
+}
+
+const contain = {
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+    border: '3px solid #0D1C58 ',
+    padding: '30px 50px 50px 50px'
 }

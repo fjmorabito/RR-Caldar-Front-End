@@ -32,8 +32,8 @@ export default class EditForm extends Component {
 
     render() {
         return (
-            <div>
-                <form onSubmit={this.handleSubmit}>
+            <div style={formDivStyle}>
+                <form style={formStyle} onSubmit={this.handleSubmit}>
                     <div>
                         <div>
                             <label>Model: </label>
@@ -46,8 +46,8 @@ export default class EditForm extends Component {
                             <input type="text" name="obs" value={this.state.obs} onChange={this.handleChange} />
                         </div>
                     </div>
-                    <button type="submit" >Confirm</button>
-                    <button onClick={this.props.hideEditForm}>Exit</button>
+                    <button style={buttonStyle} onClick={this.props.hideEditForm} type="submit" >Confirm</button>
+                    <button style={buttonStyle} onClick={this.props.hideEditForm}>Exit</button>
                 </form>
             </div>
         );
@@ -55,6 +55,34 @@ export default class EditForm extends Component {
 }
 
 EditForm.propTypes = {
-    edited: PropTypes.array.isRequired,
-    hideEdit: PropTypes.func.isRequired,
+    hideEditForm: PropTypes.func.isRequired,
 }
+
+const formDivStyle = {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#CCDEF3',
+    border: '2px solid #000000',
+    padding: '10px',
+    marginBottom: '20px'
+}
+
+const buttonStyle = {
+    display: 'flex',
+    justifyContent: 'center',
+    padding: '6px',
+    margin: '0 3px 0 0',
+    borderWidth: '0.5px',
+    cursor: 'pointer',
+    textStyle: 'bold'
+}
+
+const formStyle = {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    padding: '10px',
+    marginBottom: '10px'
+}
+
